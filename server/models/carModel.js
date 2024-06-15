@@ -1,12 +1,12 @@
-import mongoose from 'mongoose'
-const { Schema } = mongoose
+import mongoose from "mongoose";
+const { Schema } = mongoose;
 
 const carSchema = new Schema(
   {
     user: {
       type: mongoose.Schema.Types.ObjectId,
       required: true,
-      ref: 'User',
+      ref: "User",
     },
     name: {
       type: String,
@@ -36,16 +36,16 @@ const carSchema = new Schema(
       type: String,
       required: true,
     },
-    images: [{ type: String, required: true }],
+    images: [{ type: String, required: false }],
     isReserved: {
       type: Boolean,
-      required: true,
+      required: false,
       default: false,
     },
   },
   { timestamps: true }
-)
+);
 
-const Car = mongoose.model('Car', carSchema)
+const Car = mongoose.model("Car", carSchema);
 
-export default Car
+export default Car;
